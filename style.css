@@ -1,0 +1,556 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;700&display=swap");
+
+/* Modern Color Palette */
+:root {
+  --primary-color: #0d1a2d;
+  --secondary-color: #56c2e3;
+  --accent-color: #ff6f61;
+  --text-color-light: #e0e0e0;
+  --text-color-dark: #333;
+  --bg-dark: #0a192f;
+  --bg-light: #f4f7f9;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+  background-color: var(--bg-light);
+  color: var(--text-color-dark);
+}
+
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: auto;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  background-color: transparent;
+  transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+.navbar.solid {
+  background-color: var(--bg-dark);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.navbar-brand {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-color-light);
+  transition: color 0.5s ease;
+}
+
+.navbar.solid .navbar-brand {
+  color: var(--secondary-color);
+}
+
+.menu-items {
+  display: flex;
+  list-style: none;
+}
+
+.menu-items li {
+  padding: 0 1.5rem;
+}
+
+.menu-items a {
+  text-decoration: none;
+  color: var(--text-color-light);
+  font-size: 1.1rem;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.menu-items a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--secondary-color);
+  transition: width 0.3s ease;
+}
+
+.menu-items a:hover::after {
+  width: 100%;
+}
+
+.navbar.solid .menu-items a {
+  color: var(--text-color-light);
+}
+
+.navbar.solid .menu-items a:hover {
+  color: var(--secondary-color);
+}
+
+/* Home Section */
+.home-content {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, var(--primary-color), var(--bg-dark));
+  color: var(--text-color-light);
+}
+
+.home-content .name h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.home-content .name p {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--secondary-color);
+}
+
+.angle-down-icon {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+  color: var(--text-color-light);
+  animation: bounce 2s infinite;
+}
+
+.angle-down-icon a {
+  color: inherit;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+/* About Me */
+.about-me {
+  background-color: var(--primary-color);
+  padding: 8rem 0;
+  color: var(--text-color-light);
+}
+
+.about-me .about-heading,
+.about-me .skills-heading {
+  font-family: "Montserrat", sans-serif;
+  color: var(--secondary-color);
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-content .left-content,
+.about-content .right-content {
+  flex-basis: 45%;
+  min-width: 300px;
+}
+
+.about-content img {
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid var(--secondary-color);
+  margin-bottom: 1.5rem;
+}
+
+.about-content .left-content {
+  text-align: center;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.work-arrow a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.work-arrow a:hover {
+  transform: translateY(5px);
+}
+
+.work-arrow-2 {
+  display: none;
+}
+
+/* Skills Bar */
+.skills {
+  margin-top: 4rem;
+}
+
+.skills-bar {
+  padding: 0 1rem;
+}
+
+.skills-bar .bar {
+  margin: 2rem 0;
+}
+
+.skills-bar .bar .info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  color: var(--text-color-light);
+}
+
+.skills-bar .bar .info span {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.skills-bar .bar .progress-line {
+  position: relative;
+  height: 10px;
+  width: 100%;
+  background: var(--text-color-dark);
+  border-radius: 10px;
+}
+
+.bar .progress-line span {
+  position: absolute;
+  height: 100%;
+  background: var(--secondary-color);
+  border-radius: 10px;
+  animation: progress-animation 1.5s ease-in-out forwards;
+  width: 0;
+  animation-delay: 0.5s;
+}
+
+.progress-line.html-progress span {
+  width: 90%;
+}
+.progress-line.css-progress span {
+  width: 70%;
+}
+.progress-line.javascript-progress span {
+  width: 50%;
+}
+.progress-line.c-progress span {
+  width: 50%;
+}
+
+@keyframes progress-animation {
+  0% {
+    width: 0;
+  }
+}
+
+.progress-line span::after {
+  content: attr(data-progress);
+  position: absolute;
+  right: 0;
+  top: -28px;
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+
+/* Projects */
+.project {
+  background: var(--bg-light);
+  padding: 8rem 0;
+}
+
+.proj-heading h1 {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.project-1, .project-2 {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.project-1 img, .project-2 img {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.project-1 img:hover, .project-2 img:hover {
+  transform: scale(1.05);
+}
+
+.proj1-details, .proj2-details {
+  flex: 1;
+  min-width: 300px;
+}
+
+.proj1-details h2, .proj2-details h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.proj1-details p, .proj2-details p {
+  font-size: 1.1rem;
+  color: var(--text-color-dark);
+}
+
+.proj1-details button, .proj2-details button {
+  background: var(--accent-color);
+  padding: 0.8rem 1.5rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.proj1-details button a, .proj2-details button a {
+  text-decoration: none;
+  color: var(--text-color-light);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.proj1-details button:hover, .proj2-details button:hover {
+  background-color: #ff8c80;
+}
+
+.more-work {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.more-work p {
+  font-size: 1.4rem;
+  color: var(--primary-color);
+}
+
+/* Contact */
+.contact {
+  background: var(--bg-dark);
+  padding: 8rem 0;
+  color: var(--text-color-light);
+  text-align: center;
+}
+
+.contact-content {
+  max-width: 600px;
+  margin: auto;
+}
+
+.contact-content h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.contact-content .mail {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem; /* space between each icon+text pair */
+  flex-wrap: wrap; /* allows wrapping on small screens */
+  margin-bottom: 2rem;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* space between icon and text */
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: var(--secondary-color);
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--accent-color);
+}
+
+.social-links i {
+  font-size: 1.6rem; /* icon size */
+}
+
+
+/* Form */
+.form-card1 {
+  background-color: var(--primary-color);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.form-heading {
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-field {
+  background-color: #2b3952;
+  border-radius: 8px;
+  padding: 0.8rem;
+}
+
+.input-field {
+  width: 100%;
+  border: none;
+  background: none;
+  color: var(--text-color-light);
+  font-size: 1rem;
+  outline: none;
+}
+
+.sendMessage-btn {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  font-weight: 700;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sendMessage-btn:hover {
+  background-color: var(--accent-color);
+  color: var(--text-color-light);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 0 1rem;
+  }
+  .menu-items {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-dark);
+    padding: 1rem 0;
+    text-align: center;
+  }
+  .menu-items.active {
+    display: flex;
+  }
+  .menu-items li {
+    padding: 1rem 0;
+  }
+  
+  .about-content, .project-1, .project-2 {
+    flex-direction: column;
+  }
+  
+  .about-content .left-content,
+  .about-content .right-content {
+    min-width: 100%;
+  }
+
+  .proj1-details, .proj2-details {
+    text-align: center;
+  }
+
+  .work-arrow-2 {
+    display: block;
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .work-arrow-2 a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+  }
+
+  .work-arrow-2 a:hover {
+    transform: translateY(5px);
+  }
+
+  .work-arrow {
+    display: none;
+  }
+  
+  /* On smaller screens, allow individual links to stack if needed */
+  .contact-content .links {
+    gap: 1.5rem; /* Adjust gap for smaller screens */
+  }
+}
