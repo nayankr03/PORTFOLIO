@@ -1,4 +1,4 @@
-Nayan Kumar Portfolio
+## 🚀Portfolio
 
 Welcome to my personal portfolio website! This project showcases my skills, experience, projects, and contact information in a clean, responsive, and modern design.
 
