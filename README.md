@@ -73,7 +73,7 @@ A complete inventory and billing management solution featuring customer manageme
 
 ---
 
-### 🛠 Smart Complaint Management System (ServiQ)
+### 🛠 Smart Complaint Management System (IssueTrack)
 **Tech Stack:** Python, Django
 
 A complaint management platform where users can register complaints, track their status, and administrators can efficiently manage and resolve issues.
